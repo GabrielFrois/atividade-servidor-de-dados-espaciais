@@ -53,7 +53,7 @@ npm run dev
 ```
 O servidor estará disponível em http://localhost:3001.
 
-## Endpoints Disponíveis
+## Rotas Disponíveis
 1. `/cidade`
 Retorna um array com todas as cidades do país.
 
