@@ -18,11 +18,11 @@ server/
 │   ├── routes/
 │   │   └── cidade.ts
 │   └── index.ts
-├── README.md
 ├── .env              
 ├── package.json
 ├── package-lock.json
-└── tsconfig.json
+├── tsconfig.json
+└── README.md
 ```
 - `data/`: Contém os arquivos de dados espaciais fornecidos pelo LABREN/INPE.
 - `src/`: Contém o código-fonte do servidor.
@@ -112,11 +112,16 @@ Retorna os dados de irradiação solar para a cidade com o ID especificado.
 4. Execute o comando `npm run load` para carregar os arquivos `data/cidade.geojson` e `data/global_horizontal_means.geojson` nas tabelas `cidades` e `irradiancias`, respectivamente.
 
 ### Base de dados
-O LABREN – Laboratório de Modelagem e Estudos de Recursos Renováveis de Energia do INPE gerou o Altas Brasileiro de Energia Solar de 2017 (http://labren.ccst.inpe.br/atlas_2017.html). A base é composta de 72272 registros contendo as médias anuais e mensais do total diário da irradiação Global Horizontal, Difusa, Direta Normal, no Plano Inclinado e PAR em Wh/m2.dia.
-Resolução espacial de 0,1° x 0,1° (aproximadamente 10 km x 10 km).
-Longitude e latitude definem o centroide das entidades, ou células, de 0,1° x 0,1°.
-Os dados estão na pasta `data` do repositório.
+O LABREN – Laboratório de Modelagem e Estudos de Recursos Renováveis de Energia do INPE gerou o Altas Brasileiro de Energia Solar de 2017 (http://labren.ccst.inpe.br/atlas_2017.html). A base é composta de 72272 registros contendo as médias anuais e mensais do total diário da irradiação Global Horizontal, Difusa, Direta Normal, no Plano Inclinado e PAR em Wh/m2.dia.  
+Resolução espacial de 0,1° x 0,1° (aproximadamente 10 km x 10 km).  
+Longitude e latitude definem o centroide das entidades, ou células, de 0,1° x 0,1°.  
+Os dados estão na pasta `data` do repositório.  
 
 ## Tecnologias Utilizadas
+### Server:
 - Node.js
 - Express
+- PostgreSQL com PostGIS
+- TypeScript
+### Dados:
+- GeoJSON do Atlas Brasileiro de Energia Solar (LABREN/INPE)
